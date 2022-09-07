@@ -1,0 +1,31 @@
+<div [style.height.%]="100">
+  <ruf-page-header
+  rufId="page_header_example_title"
+  icon="fis"
+  title="Example Title"
+  description="Example description under the title"
+  [color]="'default'"
+  >
+  <div fxLayout="column" fxLayoutAlign="center flex-end">
+    <h2 class="ruf-page-header-metric">Metric</h2>
+    <small>Metric Description</small>
+  </div>
+  <ruf-page-header-row rufId="ruf-page-header_menu_row">
+
+  </ruf-page-header-row>
+  </ruf-page-header>
+  <ruf-card
+    rufId="cardExpandCollapse"
+    [style.height.%]="100"
+    [expandable]="true"
+    title="Welcome! to the Demo"
+    adminportalTitleRemoval
+  >
+
+
+    <div fxLayoutAlign="center center">
+      <h1 [style.fontSize.rem]="5">DASHBOARD</h1>
+    </div>
+  </ruf-card>
+
+</div>

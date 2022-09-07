@@ -1,0 +1,25 @@
+// IMPORTANT - PLEASE DO NOT REMOVE THE SPECIAL COMMENTS STARTING WITH //@@.
+// THESE ARE REQUIRED FOR ADDING IMPORTS AND INCLUDES FOR A NEWLY CREATED COMPONENT.
+@use "@ruf/shell" as ruf;
+@use "sass:map";
+
+//@import 'node_modules/@ruf/theming/styles/theming/typography';
+
+//@@IMPORT
+
+// a convenience mixin that aggregates all of your component theme mixins
+@mixin app-all-theme($theme, $config: null) {
+  // include your theme mixins below
+  $primary: map-get($theme, primary);
+  $error: map-get($theme, error);
+  $info: map-get($theme, info);
+  $accent: map-get($theme, accent);
+  $foreground: map.get($theme, foreground);
+  $background: map.get($theme, background);
+
+  @include app-typography($config);
+}
+
+@mixin app-typography($config: ruf-typography-config()) {
+
+}

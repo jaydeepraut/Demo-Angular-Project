@@ -1,0 +1,40 @@
+<div fxLayout="column" [style.height]="'100vh'">
+  <ruf-banner rufThemeColor themeColorFor="ruf-banner" rufId="banner_select_color">
+    <button rufId  mat-icon-button aria-label="Main menu" fisStyle>
+    <mat-icon fisStyle fisIcon="menu" (click)="start.toggle(undefined, 'mouse')"></mat-icon>
+  </button>
+    <ruf-banner-brand title="RUF Angular Demo"></ruf-banner-brand>
+  </ruf-banner>
+
+
+  <ruf-app-canvas fxFlex [style.padding]="'8px'" [style.overflow-y]="'hidden'" [style.overflow-x]="'hidden'">
+
+         <mat-sidenav-container fisStyle [hasBackdrop]="showBackdrop" rufId="sidenav_container" [style.height.%]="100">
+            <mat-sidenav rufId="start_sidenav" #start=""  [mode]="'side'"  [fixedTopGap]="fixedTop" [fixedBottomGap]="fixedBottom" fisStyle>
+            <h3>Start Side Side</h3>
+            <button rufId="start_sidenav_close" class="btn-margin" mat-button (click)="start.close()" fisStyle>Close</button>
+            <br>
+            <button rufId="end_sidenav_open" class="btn-margin" mat-button (click)="end.open('keyboard')" fisStyle>Open End Side</button>
+            <br>
+            <button rufId="start_sidenav_toggle_mode" class="btn-margin" mat-button (click)="modeIndex = (modeIndex + 1) % 3" fisStyle>Toggle Mode</button>
+            <div>Mode: {{start.mode}}</div>
+            <br>
+
+            <h2 *ngFor="let c of fillerContent; let i=index">sidenav item{{i+1}}</h2>
+            </mat-sidenav>
+            <mat-sidenav rufId="end_sidenav" #end position="end"  [fixedTopGap]="fixedTop" [fixedBottomGap]="fixedBottom" fisStyle>
+            <h3>End Side Sidenav</h3>
+            <button rufId="end_sidenav_close" class="example-margin" mat-button (click)="end.close()" fisStyle>Close</button>
+            <h2  *ngFor="let c of fillerContent; let i = index"><b>sidenav item{{i+1}}</b></h2>
+            </mat-sidenav>
+            <mat-sidenav-content [style.overflow-y]="'hidden'" [style.overflow-x]="'hidden'">
+               <ruf-router-outlet></ruf-router-outlet>
+            </mat-sidenav-content>
+         </mat-sidenav-container>
+
+
+  </ruf-app-canvas>
+
+
+  <ruf-footer> &copy; 2022  FIS </ruf-footer>
+</div>

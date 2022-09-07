@@ -1,0 +1,16 @@
+@use "@ruf/shell" as ruf;
+
+/* importing the prebuilt color theme called "fis-default" as prebuilt-themes */
+@use "~@ruf/prebuilt-themes/fis-default-css-vars" as prebuilt-themes;
+
+@use "@ruf/shell/styles/index";
+
+// use _all-theme.scss as my-app-theme
+@use "./_all-theme" as my-app-theme;
+
+@use '@ruf/material' as ruf-mat;
+@use '@ruf/theming' as ruf-theming;
+
+// include app-all-theme mixin from _all-theme.scss and pass prebuilt-themes.
+@include my-app-theme.app-all-theme(prebuilt-themes.$theme);
+
